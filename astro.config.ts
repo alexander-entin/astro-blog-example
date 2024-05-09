@@ -5,15 +5,16 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
-
 import cloudflare from "@astrojs/cloudflare";
+import keystatic from '@keystatic/astro'
+import markdoc from "@astrojs/markdoc";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   integrations: [tailwind({
     applyBaseStyles: false
-  }), react(), sitemap()],
+  }), react(), sitemap(), markdoc(), keystatic()],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, {
       test: "Table of contents"
