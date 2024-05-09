@@ -8,13 +8,14 @@ import { SITE } from "./src/config";
 import cloudflare from "@astrojs/cloudflare";
 import keystatic from '@keystatic/astro'
 import markdoc from "@astrojs/markdoc";
+import sveltiaCms from "astro-sveltia-cms";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
   integrations: [tailwind({
     applyBaseStyles: false
-  }), react(), sitemap(), markdoc(), keystatic()],
+  }), react(), sitemap(), markdoc(), keystatic(), sveltiaCms()],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, {
       test: "Table of contents"

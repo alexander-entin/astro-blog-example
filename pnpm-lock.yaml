@@ -35,6 +35,9 @@ importers:
       astro:
         specifier: ^4.2.1
         version: 4.7.1(@types/node@20.12.11)(lightningcss@1.24.1)(terser@5.31.0)(typescript@5.4.5)
+      astro-sveltia-cms:
+        specifier: ^0.1.0
+        version: 0.1.0(astro@4.7.1(@types/node@20.12.11)(lightningcss@1.24.1)(terser@5.31.0)(typescript@5.4.5))
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
@@ -2217,6 +2220,11 @@ packages:
   astro-eslint-parser@0.16.3:
     resolution: {integrity: sha512-CGaBseNtunAV2DCpwBXqTKq8+9Tw65XZetMaC0FsMoZuLj0gxNIkbCf2QyKYScVrNOU7/ayfNdVw8ZCSHBiqCg==}
     engines: {node: ^14.18.0 || >=16.0.0}
+
+  astro-sveltia-cms@0.1.0:
+    resolution: {integrity: sha512-2FPiq8X4h8yMczrTPut2tYyNyXJMSSWvz/tFMfejJwNb00SBhjUWzyduG3XOQJbDeOfXzkejd551zpwwhDvT+A==}
+    peerDependencies:
+      astro: ^2.0.0 || ^3.0.0
 
   astro@4.7.1:
     resolution: {integrity: sha512-3o+VmnIPBiCm0QVyyTC/F8humNXny5YpI+MKvBTksviRtKxhnztEA3+GAR2XWLUSOx1+/GVjz7mExq3hJGOeqQ==}
@@ -7738,6 +7746,10 @@ snapshots:
       semver: 7.6.1
     transitivePeerDependencies:
       - supports-color
+
+  astro-sveltia-cms@0.1.0(astro@4.7.1(@types/node@20.12.11)(lightningcss@1.24.1)(terser@5.31.0)(typescript@5.4.5)):
+    dependencies:
+      astro: 4.7.1(@types/node@20.12.11)(lightningcss@1.24.1)(terser@5.31.0)(typescript@5.4.5)
 
   astro@4.7.1(@types/node@20.12.11)(lightningcss@1.24.1)(terser@5.31.0)(typescript@5.4.5):
     dependencies:

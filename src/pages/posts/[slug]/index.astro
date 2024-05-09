@@ -7,11 +7,11 @@ import getPageNumbers from "@utils/getPageNumbers";
 import getPagination from "@utils/getPagination";
 
 const { slug } = Astro.params;
-const post = await getEntry('blog', slug)
+const post = await getEntry('posts', slug)
 
 const pagination = !post && getPagination({
-  posts: getSortedPosts(await getCollection("blog")),
-  page: slug,
+	posts: getSortedPosts(await getCollection('posts')),
+	page: slug,
 });
 ---
 
