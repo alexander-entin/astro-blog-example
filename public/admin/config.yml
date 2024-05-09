@@ -8,6 +8,7 @@ backend:
   site_domain: astro-als.pages.dev
   base_url: https://astro-als.pages.dev
   auth_endpoint: oauth
+  automatic_deployments: true
 
 media_folder: src/assets/images
 public_folder: "@assets/images"
@@ -15,19 +16,19 @@ public_folder: "@assets/images"
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "src/collections/posts"
+    folder: "src/content/posts"
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}{{month}}{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     preview_path_date_field: pubDatetime
     fields:
       - { name: author, label: Author, widget: string }
-      - { name: pubDatetime, label: Published, widget: datetime, required: false }
-      - { name: modDatetime, label: Modified, widget: datetime, required: false }
+      - { name: pubDatetime, label: Published, widget: datetime, required: false, default: null }
+      - { name: modDatetime, label: Modified, widget: datetime, required: false, default: null }
       - { name: title, label: Title, widget: string }
       - { name: ogImage, label: OgImage, widget: string, required: false }
-      - { name: slug, label: Slug, widget: string }
-      - { name: featured, label: Featured, widget: boolean, default: false }
-      - { name: draft, label: Draft, widget: boolean, default: false }
+      #- { name: slug, label: Slug, widget: string }
+      - { name: featured, label: Featured, widget: boolean, required: false }
+      - { name: draft, label: Draft, widget: boolean, required: false }
       #- { name: tags, label: Tags, widget: string, list: true }
-      - { name: description, label: Description, widget: string }
+      - { name: description, label: Description, widget: string, required: false }
       - { name: body, label: Body, widget: markdown }
